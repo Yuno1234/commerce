@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+}
+
+
+/* index.html */
+.index-title-container label {
+    margin-left: 20px;
+}
+
+.index-title-container .filter-btn {
+    padding: 3px 10px;
+}
+
+.index-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.index-anchor {
+    color: black;
+}
+
+.index-anchor:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.index-listing {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+    margin: 30px;
+    max-width: 350px;
+    max-height: 600px;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 5px;
+
+}
+
+.index-card-content {
+    padding: 15px;
+    overflow: hidden;
+}
+
+.index-title {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.index-description {
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.index-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.index-img img {
+    max-height: 290px;
+    max-width: 290px;
+}
+
+/* listing.html */
+
+.listing-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+.listing-content {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.listing-detail {
+    padding: 10px 40px;
+}
+
+.listing-img img {
+    max-height: 350px;
+    max-width: 350px;
+}
+
+.listing-price {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.listing-price-div {
+    text-align: center;
+}
+
+.listing-form {
+    display: flex;
+    justify-content: center;
+}
+
+.listing-form form {
+    margin-top: 20px;
+}
+
+.close-btn,
+.watchlist-btn {
+    width: 200px;
+}
+
+.listing-comment {
+    margin: 30px 8px;
+    padding: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}

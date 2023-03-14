@@ -1,0 +1,51 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+    <div class="index-title-container">
+        <h2>Active Listings</h2>
+        <div class="index-form">
+            <form action="{% url 'index' %}">
+                <label for="category">Category:</label>
+                <select name="category">
+                    <option value="all">All</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category }}">{{ category.category }}</option>
+                    {% endfor %}
+                </select>
+                <label for="isActive">Open & Closed:</label>
+                <select name="isActive">
+                    <option value="all">All</option>
+                    <option value="True">Open</option>
+                    <option value="False">Closed</option>
+                </select>
+                <label for="watchlist">Watchlist:</label>
+                <input type="checkbox" name="watchlist">
+                <input class="btn btn-primary ml-3 filter-btn" type="submit" name="filter" value="Filter">
+            </form>
+        </div>
+    </div>
+    <div class="index-container">
+        {% for listing in listings %}
+            <div class="index-listing">
+                <div class="index-img">
+                    <img src="{{ listing.image }}" alt="">
+                </div>
+                <div class="index-card-content">
+                    <a class="index-anchor" href="{% url 'listing' listing.id %}">
+                        <h3 class="index-title">{{ listing.title }}</h3>
+                        <p class="date">{{ listing.date }}</p>
+                        <p class="index-description">{{ listing.description }}</p>
+                        <p class="start-bid"><strong>
+                            {% if listing.currentBid %}
+                                ${{ listing.currentBid }}
+                            {% else %}
+                                ${{ listing.startBid}}
+                            {% endif %}
+                        </strong></p>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
